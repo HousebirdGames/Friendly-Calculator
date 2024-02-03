@@ -1,0 +1,6 @@
+node_modules/
+minified/
+temp/
+backup/
+sftp-config.js
+pipeline-log.txt
