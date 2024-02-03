@@ -216,7 +216,7 @@ function calculate() {
 }
 
 document.addEventListener('keydown', function (event) {
-    const calculatorVisible = document.querySelector('.calculator').style.display !== 'none' && document.querySelector('.calculator').style.display === 'block';
+    const calculatorVisible = document.getElementById('storagePopup').classList.contains('visible') === false;
     if (calculatorVisible) {
         switch (event.key) {
             case 'Enter':
