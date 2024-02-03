@@ -1,13 +1,3 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/calculator/service-worker.js?v=1.7.8').then(function (registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) {
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-}
-
 let deferredPrompt;
 
 const installButton = document.getElementById('installButton');

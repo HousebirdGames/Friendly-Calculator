@@ -1,0 +1,19 @@
+{
+  "name": "Calculator Pipeline",
+  "version": "1.0.0",
+  "main": "pipeline.js",
+  "scripts": {
+    "pipeline": "node pipeline.js"
+  },
+  "keywords": [],
+  "author": "Felix T. Vogel",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clean-css": "^5.3.3",
+    "node": "^21.2.0",
+    "progress": "^2.0.3",
+    "sharp": "^0.33.2",
+    "ssh2-sftp-client": "^9.1.0",
+    "uglify-js": "^3.17.4"
+  }
+}

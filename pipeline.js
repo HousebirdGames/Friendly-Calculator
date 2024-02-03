@@ -22,10 +22,9 @@ const chalk = require('chalk');
 const SftpClient = require('ssh2-sftp-client');
 const UglifyJS = require("uglify-js");
 const CleanCSS = require('clean-css');
-const sharp = require('sharp');
 
 const ignoredFileTypes = ['.zip', '.rar', '.md', '.txt', '.psd'];
-const directoriesToInclude = ['./src', './img', './img/themes', './fonts'];
+const directoriesToInclude = ['./src', './img', './fonts'];
 let filesToCache = [
     'service-worker.js',
     'service-worker-registration.js',
@@ -42,12 +41,11 @@ let filesToCache = [
     'void-style.css',
     'style.css',
 ];
-const databaseDir = './database';
 const htaccessFile = '.htaccess';
 const cacheFile = './filesToCache.js';
 const applicationPaths = {
-    production: '/housebird_games/calculator',
-    staging: '/calculator-staging'
+    production: 'housebird_games/calculator',
+    staging: 'calculator-staging'
 };
 const statisticsFileName = 'pipeline-log.txt';
 const minifiedDirectory = 'minified';
@@ -127,7 +125,6 @@ async function main() {
         await deleteDirectoryFromServer(applicationPath);
     }
     else {
-        await compressImages();
         filesUploaded = await uploadFilesToServer(filesToCache, applicationPath) | 0;
     }
 
@@ -262,43 +259,6 @@ async function addStatistics(time, version, uploadedFiles, cachedFiles, cacheFil
     }
 }
 
-async function compressImages() {
-    if (!fs.existsSync(compressedDir)) {
-        fs.mkdirSync(compressedDir, { recursive: true });
-    }
-
-    fs.readdir(uncompressedDir, (err, files) => {
-        if (err) {
-            console.error(`Error reading directory: ${err}`);
-            return;
-        }
-
-        if (files.length > 0) {
-            console.log('');
-            console.log(chalk.gray(`Compressing ${files.length} images...`));
-        }
-
-        files.forEach(file => {
-            infoFlag && console.log(chalk.gray(`    Compressing: ${file}`));
-            const uncompressedPath = path.join(uncompressedDir, file);
-            const compressedPath = path.join(compressedDir, file);
-
-            fs.access(compressedPath, fs.constants.F_OK, (err) => {
-                if (err) {
-                    sharp(uncompressedPath)
-                        .resize(800)
-                        .jpeg({ quality: 100 })
-                        .toFile(compressedPath)
-                        .then(() => infoFlag && console.log(chalk.gray(`Compressed: ${file}`)))
-                        .catch(err => console.error(`Error compressing ${file}: ${err}`));
-                }
-            });
-        });
-
-        if (files.length > 0) console.log(chalk.green(`Compressed ${files.length} images.`));
-    });
-}
-
 async function getCurrentVersion() {
     const data = await fsPromises.readFile(path.join(__dirname, 'service-worker.js'), 'utf8');
     const versionMatch = data.match(/self.CACHE_VERSION = '(.*?)';/);
@@ -384,7 +344,7 @@ async function writeFilesToCacheFile(filesToCache) {
     console.log(chalk.gray(`Writing ${filesToCache.length} files to ${cacheFile}...`));
 
     let fileContent = 'self.filesToCache = [\n';
-    fileContent += filesToCache.map(f => `'/${f}',`.replace(/\\/g, '/')).join('\n');
+    fileContent += filesToCache.map(f => `'/calculator/${f}',`.replace(/\\/g, '/')).join('\n');
     fileContent += '\n];';
     await fsPromises.writeFile(cacheFile, fileContent, 'utf8');
 
@@ -397,8 +357,6 @@ async function uploadFilesToServer(filesToCache, applicationPath) {
     if (!productionFlag && !stagingFlag) return;
 
     let filesToUpload = [...filesToCache, 'filesToCache.js'];
-
-    await readFilesFromDirectory(databaseDir, filesToUpload);
 
     filesToUpload.sort((a, b) => {
         if (path.basename(a) === 'service-worker.js') return 1;

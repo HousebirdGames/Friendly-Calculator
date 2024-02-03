@@ -455,6 +455,27 @@ button.menu-button {
 
 #declineStorage {}
 
+/*Loading Symbol*/
+.loadingSymbol {
+    opacity: 1;
+    border: 0.4rem dashed var(--fontColor);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    animation: spin 1.4s ease-in-out infinite;
+}
+
+.loadingSymbolWrap {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: delayedFadeIn 1s ease-in;
+}
+
 .fadeIn {
     animation: fadeIn 1s ease-in-out;
 }
