@@ -1,10 +1,5 @@
-self.CACHE_VERSION = '1.7.8.14';
+self.CACHE_VERSION = '1.7.8.26';
 self.importScripts('filesToCache.js' + `?v=${self.CACHE_VERSION}`);
-
-self.addEventListener('DOMContentLoaded', function (event) {
-    const versionText = document.getElementById('versionText');
-    versionText.innerText = self.CACHE_VERSION;
-});
 
 self.addEventListener('install', function (event) {
     event.waitUntil(cacheFiles().then(() => self.skipWaiting()));
