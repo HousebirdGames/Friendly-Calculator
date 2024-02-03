@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=1, interactive-widget=overlays-content">
+	<meta name="description"
+		content="Try this simple calculator. It's free, has no ads, and focuses on a great user experience. You can add it to the Start Screen of your smartphone. Created and published by Felix T. Vogel in 2023.">
+	<title class="title">Friendly Calculator</title>
+	<meta name="theme-color" content="#212736">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="icon" type="image/x-icon" href="img/CalculatorLogo.png">
+	<link rel="manifest" href="manifest.json?v=1.7.8">
+	<link rel="preload" href="style.css?v=1.7.8" as="style" onload="this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="style.css?v=1.7.8">
+
+		<style>
+			#infoBox {
+				transform: translateY(0%) !important;
+			}
+		</style>
+	</noscript>
+
+	<link rel="stylesheet" href="housebird-style.css?v=1.7.8" class="theme" data-theme-name="theme1" id="theme1">
+	<link rel="stylesheet" href="friendship-style.css?v=1.7.8" class="theme" data-theme-name="theme2" id="theme2"
+		disabled>
+	<link rel="stylesheet" href="minimalistic-style.css?v=1.7.8" class="theme" data-theme-name="theme3" id="theme3"
+		disabled>
+	<link rel="stylesheet" href="chillout-style.css?v=1.7.8" class="theme" data-theme-name="theme4" id="theme4"
+		disabled>
+	<link rel="stylesheet" href="retro-style.css?v=1.7.8" class="theme" data-theme-name="theme5" id="theme5" disabled>
+	<link rel="stylesheet" href="void-style.css?v=1.7.8" class="theme" data-theme-name="theme6" id="theme6" disabled>
+	<link rel="stylesheet" href="nothing-style.css?v=1.7.8" class="theme" data-theme-name="theme7" id="theme7" disabled>
+
+	<noscript>
+		<link rel="stylesheet" href="friendship-style.css?v=1.7.8">
+	</noscript>
+</head>
+
+<body>
+	<noscript>
+		<div
+			style="background-color: rgb(230, 212, 55); color: black; padding: 1em; font-family: Verdana; line-height: 2em;">
+			<strong>Warning:</strong>
+			JavaScript is not enabled in your browser. This website requires JavaScript to
+			function properly. Please enable JavaScript and refresh the page.
+		</div>
+		<br>
+
+		<style>
+			.calculator-wrap,
+			.sizeButtons,
+			.menu-button,
+			.installButton,
+			.switch-theme {
+				display: none;
+			}
+		</style>
+	</noscript>
+
+	<div class="sizeButtons">
+		<button id="increase" class="sizeButton">+</button>
+		<button id="decrease" class="sizeButton">-</button>
+	</div>
+	<div class="calculator-wrap">
+		<div class="calculator fadeIn">
+			<input type="text" class="display" placeholder="0">
+			<div class="buttons">
+				<button value="1" class="calculator-button">1</button>
+				<button value="2" class="calculator-button">2</button>
+				<button value="3" class="calculator-button border-right">3</button>
+				<button value="+" class="calculator-button operation">+</button>
+				<button value="4" class="calculator-button">4</button>
+				<button value="5" class="calculator-button">5</button>
+				<button value="6" class="calculator-button border-right">6</button>
+				<button value="-" class="calculator-button operation">-</button>
+				<button value="7" class="calculator-button border-bottom">7</button>
+				<button value="8" class="calculator-button border-bottom">8</button>
+				<button value="9" class="calculator-button border-right border-bottom">9</button>
+				<button value="*" class="calculator-button operation">*</button>
+				<button value="0" id="zeroPlaceholder" class="calculator-button placeholder">[]</button>
+				<button value="0" class="calculator-button zero">0</button>
+				<button value="." class="calculator-button dot">.</button>
+				<button value="/" class="calculator-button operation">/</button>
+				<button value="clear" id="clearPlaceholder" class="calculator-button operation placeholder">
+					<i class="material-icons">delete</i>
+				</button>
+				<button value="delete" class="calculator-button operation delete">
+					<i class="material-icons">undo</i>
+				</button>
+				<button value="=" class="calculator-button equal">=</button>
+			</div>
+		</div>
+		<button value="clear" id="clearButton" class="calculator-button clear fadeDown twoSeconds oneSecondDelay">
+			<i class="material-icons">delete</i>
+		</button>
+	</div>
+	<button id="menu-button" class="menu-button">
+		<i class="material-icons">info</i>
+	</button>
+	<a href="#" id="switch-theme" class="switch-theme">
+		<i class="material-icons">palette</i>
+	</a>
+	<a href="#" id="installButton" class="switch-theme installButton">
+		<i class="material-icons">download</i>
+	</a>
+	<p id="versionText">v=1.7.8</p>
+	<div id="infoBox" style="transform: translateY(100%);">
+		<p>This is a calculator created by
+			<a href="https://stubenvogel.com">Felix T. Vogel</a>
+		</p>
+		<div class="dot small"></div>
+		<a href="https://housebird.games">housebird.games</a>
+		<a href="https://stubenvogel.com/impressum/">Legal Notice</a>
+		<a href="https://housebird.games/privacy-policy">Privacy Policy</a>
+		<a id="openStoragePopupButton">Storage Settings</a>
+	</div>
+
+	<div id="storagePopup" class="popup initial-hide">
+		<div class="popupContent">
+			<p>The calculator can remember your chosen theme as well as size and if you have accepted this notice, using
+				your browsers local storage.</p>
+			<div class="popupButtons">
+				<button id="declineStorage" class="popupButton">Decline</button>
+				<button id="acceptStorage" class="popupButton">Accept</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/script.js?v=1.7.8"></script>
+</body>
+
+</html>

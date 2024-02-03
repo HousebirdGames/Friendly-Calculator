@@ -1,0 +1,136 @@
+:root {
+    --fontColor: white;
+    --greyLight: rgb(119, 117, 117);
+    --greyMedium: #444444;
+    --greyDark: #202020;
+    --accent: #242a3a;
+    --accentLight: rgb(46, 62, 92);
+    --accentHover: #58a4e3;
+    --accentActive: #83c7ff;
+    --lighter: rgb(255, 255, 255, 0.2);
+    --muchLighter: rgb(255, 255, 255, 0.4);
+    --darker: rgb(0, 0, 0, 0.4);
+    --muchDarker: rgb(0, 0, 0, 0.64);
+    --muchMuchDarker: rgb(0, 0, 0, 0.84);
+    --background: #58a4e3;
+    --highlight: #9e7d36;
+    --highlightHover: #be902b;
+    --highlightActive: #ffdb8c;
+    --lowlight: #555555;
+    --admin: #af8f49;
+    --true: #6cd394;
+    --warning: rgb(158, 54, 54);
+    --none: rgb(255, 255, 255, 0);
+
+    --gradientToRightLighterNone: linear-gradient(to right, var(--lighter), var(--none));
+    --gradientToLeftMuchLighterNone: linear-gradient(to left, var(--muchLighter), var(--none));
+
+    --border: 0.2rem solid rgb(46, 62, 92);
+    --borderRadius: 1rem;
+    --borderRadiusButtons: 1rem;
+    --fontFamily: 'Oxygen', sans-serif;
+    --boxShadow: 0px 0px 0.54rem var(--darker);
+    --fontSize: 1.4rem;
+    --fontSizeLarge: 1.5rem;
+    --fontSizeMedium: 1.2rem;
+    --fontSizeSmall: 0.8rem;
+    --transitionFast: 0.04s ease-in-out;
+    --transitionNormal: 0.2s ease-in-out;
+    --transitionSlow: 4s ease-out;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Bold.ttf');
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('fonts/Oxygen/Oxygen-Light.ttf');
+    font-weight: lighter;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        /*url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(fonts/MaterialIcons-Regular.woff) format('woff'),*/
+        url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    vertical-align: middle;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+a:hover {
+    color: var(--accentHover);
+}
+
+.clear {
+    border-radius: 0 0 50% 50%;
+    padding-bottom: 1.2rem;
+}
+
+#increase.sizeButton,
+#decrease.sizeButton {
+    border-radius: 50% 0 0 50%;
+}
+
+.sizeButton:hover {
+    background: var(--accentActive);
+}
+
+#infoBox {
+    background: var(--accent);
+}
+
+@media (max-width: 400px) {
+    #infoBox {
+        background: var(--accentLight);
+    }
+}
+
+@media (max-height: 680px) {
+    #infoBox {
+        background: var(--accentLight);
+    }
+}

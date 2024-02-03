@@ -1,0 +1,252 @@
+:root {
+    --fontColor: black;
+    --accent: white;
+    --accentLight: white;
+    --accentHover: linear-gradient(to top, rgba(255, 255, 255, 0.2), var(--none));
+    --accentActive: white;
+    --lighter: white;
+    --muchLighter: white;
+    --darker: white;
+    --muchDarker: white;
+    --muchMuchDarker: white;
+    --background: white;
+    --highlight: white;
+    --highlightHover: white;
+    --highlightActive: white;
+    --lowlight: #555555;
+    --admin: #af8f49;
+    --true: white;
+    --warning: white;
+    --none: rgb(255, 255, 255, 0);
+
+    --gradientToRightLighterNone: linear-gradient(to right, var(--lighter), var(--none));
+    --gradientToLeftMuchLighterNone: linear-gradient(to left, var(--muchLighter), var(--none));
+
+    --border: 1px solid white;
+    --borderRadius: 0rem;
+    --borderRadiusButtons: 0;
+    --fontFamily: 'Staatliches', sans-serif;
+    --boxShadow: 0px 0px 0.54rem var(--darker);
+    --fontSize: 3rem;
+    --fontSizeLarge: 3rem;
+    --fontSizeMedium: 3rem;
+    --fontSizeSmall: 0.8rem;
+    --transitionFast: 0.2s ease-out;
+    --transitionNormal: 0.4s ease-in-out;
+    --transitionSlow: 4s ease-out;
+}
+
+@font-face {
+    font-family: 'Staatliches';
+    src: url('fonts/Staatliches/Staatliches-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        /*url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(fonts/MaterialIcons-Regular.woff) format('woff'),*/
+        url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    vertical-align: middle;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.calculator {
+    background: var(--none)
+}
+
+.display,
+.display:hover,
+.display:focus {
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    text-align: center;
+}
+
+button.zero {
+    grid-column: span 1;
+    aspect-ratio: unset;
+}
+
+#zeroPlaceholder {
+    display: block;
+}
+
+button.equal,
+button.operation,
+button.delete .material-icons {
+    font-size: var(--fontSize);
+}
+
+button.equal,
+button.equal:hover {
+    background: black;
+    color: white
+}
+
+.clear,
+.clear:hover {
+    margin-top: unset;
+    margin-bottom: unset;
+    opacity: 1;
+    height: unset;
+    width: unset;
+    padding: 1rem;
+    background: black;
+    color: white
+}
+
+#infoBox {
+    background: black;
+}
+
+#infoBox p,
+#infoBox a {
+    color: white;
+}
+
+a.switch-theme:active .material-icons,
+.material-icons:active {
+    color: black;
+}
+
+a:hover {
+    border-bottom: 0.2rem solid white;
+    transition: var(--transitionFast);
+}
+
+#infoBox p a {
+    padding: 0 0.2rem;
+    transition: var(--transitionFast);
+}
+
+#infoBox p a:hover {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0 0.2rem;
+    transition: var(--transitionFast);
+}
+
+#increase.sizeButton,
+#decrease.sizeButton {
+    border-radius: 50%;
+    margin-right: 1rem;
+    padding: 1rem;
+    font-size: 3rem;
+    background: var(--highlight);
+}
+
+#increase.sizeButton:hover,
+#decrease.sizeButton:hover {
+    border-radius: 50%;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: var(--highlightActive);
+}
+
+a.switch-theme:hover {
+    border: none;
+}
+
+.popupContent p {
+    font-size: 1.4rem;
+}
+
+.popupContent button {
+    padding: 0;
+    line-height: 1;
+    font-size: var(--fontSize);
+    border-bottom: 0.2rem solid var(--none);
+}
+
+.popupContent button:hover {
+    border-bottom: 0.2rem solid black;
+}
+
+@keyframes pop {
+    0% {}
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {}
+}
+
+@keyframes border {
+    0% {}
+
+    10% {
+        color: var(--lighter);
+    }
+
+    20% {}
+
+    30% {
+        color: var(--fontColor);
+    }
+
+    100% {}
+}
+
+@keyframes button-click-delete {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        scale: 0.4;
+    }
+
+    100% {
+
+        transform: rotateZ(360deg);
+    }
+}
+
+@media (max-height: 500px) {
+    .display {
+        font-size: var(--fontSize);
+    }
+}
+
+@media (max-width: 400px) {
+    .display {
+        font-size: var(--fontSize);
+    }
+}

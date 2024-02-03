@@ -1,0 +1,310 @@
+:root {
+    --fontColor: #00c510;
+    --greyLight: rgb(119, 117, 117);
+    --greyMedium: #444444;
+    --greyDark: #202020;
+    --accent: black;
+    --accentLight: rgb(255, 255, 255, 0);
+    --accentHover: rgb(255, 255, 255, 0);
+    --accentActive: rgb(255, 255, 255, 0);
+    --lighter: rgb(255, 255, 255, 0.2);
+    --muchLighter: rgb(255, 255, 255, 0.4);
+    --darker: rgb(0, 0, 0, 0.4);
+    --muchDarker: rgb(0, 0, 0, 0.64);
+    --muchMuchDarker: rgb(0, 0, 0, 0.84);
+    --background: black;
+    --highlight: #00c510;
+    --highlightHover: #00c510;
+    --highlightActive: #00c510;
+    --lowlight: #555555;
+    --admin: #af8f49;
+    --true: #00c510;
+    --warning: #00c510;
+    --none: rgb(255, 255, 255, 0);
+
+    --gradientToRightLighterNone: linear-gradient(to right, var(--lighter), var(--none));
+    --gradientToLeftMuchLighterNone: linear-gradient(to left, var(--muchLighter), var(--none));
+
+    --border: 0.2rem dashed var(--fontColor);
+    --borderRadius: 0;
+    --borderRadiusButtons: 0;
+    --fontFamily: 'VT323', sans-serif;
+    --boxShadow: 0px 0px 0.54rem var(--darker);
+    --fontSize: 2.4rem;
+    --fontSizeLarge: 2.4rem;
+    --fontSizeMedium: 2.4rem;
+    --fontSizeSmall: 0.8rem;
+    --transitionFast: none;
+    --transitionNormal: none;
+    --transitionSlow: none;
+}
+
+@font-face {
+    font-family: 'VT323';
+    src: url('fonts/VT323/VT323-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        /*url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(fonts/MaterialIcons-Regular.woff) format('woff'),*/
+        url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    vertical-align: middle;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.clear {
+    border-radius: 0 0 50% 50%;
+    padding-bottom: 1.2rem;
+}
+
+#increase.sizeButton,
+#decrease.sizeButton {
+    border-radius: 0;
+    font-size: 2.4rem;
+    padding: 1rem;
+}
+
+#increase.sizeButton:hover,
+#decrease.sizeButton:hover {
+    color: black;
+    background: var(--fontColor);
+}
+
+#increase.sizeButton::before,
+#decrease.sizeButton::before {
+    content: '';
+}
+
+.sizeButton:hover {
+    background: var(--accentActive);
+}
+
+button:hover::before,
+button:active::before,
+button:focus::before {
+    content: '>';
+}
+
+.buttons {
+    grid-gap: 0.18rem;
+    border-top: var(--border);
+}
+
+.calculator-button.zero,
+.calculator-button.dot {
+    border-right: var(--border);
+    border-radius: 0;
+}
+
+.calculator-button.operation {
+    font-size: 2.4rem;
+}
+
+.calculator-button.equal {
+    background: var(--none);
+    border-top: var(--border);
+    font-size: 4rem;
+}
+
+.calculator-button.delete {
+    border-right: var(--border);
+    border-left: var(--border);
+    margin-left: -0.24rem;
+    box-sizing: border-box;
+}
+
+#clearPlaceholder {
+    border-top: var(--border);
+    background: var(--none);
+}
+
+#clearPlaceholder:hover {
+    background: var(--none);
+}
+
+.calculator-button.equal:hover {
+    background: unset;
+}
+
+.dot {
+    font-size: var(--fontSize);
+}
+
+.dot::after {
+    content: unset;
+}
+
+.calculator-button.clear {
+    color: black;
+    border: var(--border);
+    border-radius: 0;
+}
+
+.calculator-button.delete {
+    border-top: var(--border);
+}
+
+.calculator-button.clear:hover {
+    background: var(--none);
+}
+
+.calculator-button.clear i {
+    color: var(--fontColor);
+}
+
+button.calculator-button.clear:hover::before,
+button.calculator-button.clear:active::before,
+button.calculator-button.clear:focus::before,
+button.menu-button:hover::before,
+button.menu-button:active::before,
+button.menu-button:focus::before {
+    content: '';
+}
+
+.calculator {
+    border: var(--border);
+    padding: 0;
+}
+
+.display {
+    background: var(--none);
+    margin: 0;
+}
+
+#infoBox {
+    border-top: var(--border);
+    background: black;
+}
+
+.border-right {
+    border-right: var(--border);
+}
+
+.border-bottom {
+    border-bottom: var(--border);
+}
+
+.popupButtons {
+    gap: 0;
+}
+
+p,
+a,
+.menu-button {
+    border-bottom: 0.2rem solid var(--none);
+    border-radius: 0;
+}
+
+a:hover,
+.menu-button:hover {
+    border-bottom: var(--border);
+    border-radius: 0;
+}
+
+*::selection {
+    color: black;
+    background: var(--fontColor);
+}
+
+*::-moz-selection {
+    color: black;
+    background: var(--fontColor);
+}
+
+@keyframes click {}
+
+@keyframes button-click {}
+
+@keyframes button-click-equal {}
+
+@keyframes pop {
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(0.2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+
+    0%,
+    50% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+
+    69% {
+        transform: translateY(-100%);
+    }
+
+    70% {
+        transform: translateY(10%);
+    }
+
+    79% {
+        transform: translateY(10%);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes border {
+    0% {
+        transform: translateX(0.4rem);
+    }
+
+    29% {
+        transform: translateX(0.4rem);
+    }
+
+    30% {
+        transform: translateX(0rem);
+    }
+}

@@ -1,0 +1,98 @@
+:root {
+    --fontColor: black;
+    --greyLight: rgb(119, 117, 117);
+    --greyMedium: #444444;
+    --greyDark: #202020;
+    --accent: rgb(228, 228, 228);
+    --accentLight: rgb(255, 255, 255);
+    --accentHover: #d6d6d6;
+    --accentActive: #d6d6d6;
+    --lighter: rgb(255, 255, 255, 0.2);
+    --muchLighter: rgb(255, 255, 255, 0.4);
+    --darker: rgb(0, 0, 0, 0.1);
+    --muchDarker: rgb(0, 0, 0, 0.2);
+    --muchMuchDarker: rgb(0, 0, 0, 0.4);
+    --background: #b1b1b1;
+    --highlight: #b1b1b1;
+    --highlightHover: #808080;
+    --highlightActive: #4b4b4b;
+    --lowlight: #555555;
+    --admin: #808080;
+    --true: #424242;
+    --warning: #808080;
+    --none: rgb(255, 255, 255, 0);
+
+    --gradientToRightLighterNone: linear-gradient(to right, var(--lighter), var(--none));
+    --gradientToLeftMuchLighterNone: linear-gradient(to left, var(--muchLighter), var(--none));
+
+    --border: 0.1rem solid black;
+    --borderRadius: 0rem;
+    --borderRadiusButtons: 0rem;
+    --fontFamily: 'ShareTechMono', sans-serif;
+    --boxShadow: 0px 0px 0.54rem var(--darker);
+    --fontSize: 1.4rem;
+    --fontSizeLarge: 1.5rem;
+    --fontSizeMedium: 1.2rem;
+    --fontSizeSmall: 0.8rem;
+    --transitionFast: 0.01s ease-in-out;
+    --transitionNormal: 0.04s ease-in-out;
+    --transitionSlow: 4s ease-out;
+}
+
+@font-face {
+    font-family: 'ShareTechMono';
+    src: url('fonts/ShareTechMono/ShareTechMono-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        /*url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(fonts/MaterialIcons-Regular.woff) format('woff'),*/
+        url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    vertical-align: middle;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+#increase.sizeButton,
+#decrease.sizeButton {
+    border-radius: 0;
+    padding-left: 1rem;
+}
+
+#infoBox {
+    background: var(--accentLight);
+}
