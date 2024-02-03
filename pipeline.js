@@ -288,11 +288,17 @@ function getNewVersion(currentVersion) {
 }
 
 async function updateVersion(newVersion) {
-    const filePath = path.join(__dirname, 'service-worker.js');
-    let data = await fsPromises.readFile(filePath, 'utf8');
+    const serviceWorkerPath = path.join(__dirname, 'service-worker.js');
+    let data = await fsPromises.readFile(serviceWorkerPath, 'utf8');
     data = data.replace(/self.CACHE_VERSION = '(.*?)';/, `self.CACHE_VERSION = '${newVersion}';`);
-    await fsPromises.writeFile(filePath, data, 'utf8');
-    console.log(chalk.blue(`Version updated to: ${newVersion}`));
+    await fsPromises.writeFile(serviceWorkerPath, data, 'utf8');
+    console.log(chalk.blue(`Service worker version updated to: ${newVersion}`));
+
+    const indexPath = path.join(__dirname, 'index.html');
+    data = await fsPromises.readFile(indexPath, 'utf8');
+    data = data.replace(/<p id="versionText">Version (.*?)<\/p>/, `<p id="versionText">Version ${newVersion}</p>`);
+    await fsPromises.writeFile(indexPath, data, 'utf8');
+    console.log(chalk.blue(`Index.html version updated to: ${newVersion}`));
 }
 
 async function getFilesToCache() {
