@@ -1,11 +1,5 @@
 
-# robots.txt for https://the-friend-ship.com
+# robots.txt for https://housebird.games/calculator/
 User-agent: *
 
-Disallow: /settings/
-Disallow: /analytics/
-Disallow: /entries/
-
-Disallow: /uploads/
-
-Sitemap: https://the-friend-ship.com/sitemap.xml
+Sitemap: https://housebird.games/calculator/sitemap.xml
