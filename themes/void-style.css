@@ -38,7 +38,7 @@
 
 @font-face {
     font-family: 'Staatliches';
-    src: url('fonts/Staatliches/Staatliches-Regular.ttf');
+    src: url('../fonts/Staatliches/Staatliches-Regular.ttf');
     font-display: swap;
 }
 

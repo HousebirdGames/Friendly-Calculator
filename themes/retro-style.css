@@ -41,7 +41,7 @@
 
 @font-face {
     font-family: 'VT323';
-    src: url('fonts/VT323/VT323-Regular.ttf');
+    src: url('../fonts/VT323/VT323-Regular.ttf');
     font-display: swap;
 }
 

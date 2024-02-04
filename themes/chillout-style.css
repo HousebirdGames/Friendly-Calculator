@@ -41,7 +41,7 @@
 
 @font-face {
     font-family: 'Comforter';
-    src: url('fonts/PoiretOne/PoiretOne-Regular.ttf');
+    src: url('../fonts/PoiretOne/PoiretOne-Regular.ttf');
     font-display: swap;
 }
 

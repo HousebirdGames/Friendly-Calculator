@@ -41,20 +41,20 @@
 
 @font-face {
     font-family: 'Oxygen';
-    src: url('fonts/Oxygen/Oxygen-Regular.ttf');
+    src: url('../fonts/Oxygen/Oxygen-Regular.ttf');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Oxygen';
-    src: url('fonts/Oxygen/Oxygen-Bold.ttf');
+    src: url('../fonts/Oxygen/Oxygen-Bold.ttf');
     font-weight: bold;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Oxygen';
-    src: url('fonts/Oxygen/Oxygen-Light.ttf');
+    src: url('../fonts/Oxygen/Oxygen-Light.ttf');
     font-weight: lighter;
     font-display: swap;
 }

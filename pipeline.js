@@ -24,7 +24,7 @@ const UglifyJS = require("uglify-js");
 const CleanCSS = require('clean-css');
 
 const ignoredFileTypes = ['.zip', '.rar', '.md', '.txt', '.psd'];
-const directoriesToInclude = ['./src', './img', './fonts'];
+const directoriesToInclude = ['./src', './img', './fonts', './themes'];
 let filesToCache = [
     'service-worker.js',
     'service-worker-registration.js',
@@ -32,13 +32,6 @@ let filesToCache = [
     'robots.txt',
     'sitemap.xml',
     'index.html',
-    'friendship-style.css',
-    'chillout-style.css',
-    'housebird-style.css',
-    'minimalistic-style.css',
-    'nothing-style.css',
-    'retro-style.css',
-    'void-style.css',
     'style.css',
 ];
 const htaccessFile = '.htaccess';

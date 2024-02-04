@@ -1,4 +1,4 @@
-self.CACHE_VERSION = '1.8.0.1';
+self.CACHE_VERSION = '1.8.0.3';
 self.importScripts('filesToCache.js' + `?v=${self.CACHE_VERSION}`);
 
 self.addEventListener('install', function (event) {

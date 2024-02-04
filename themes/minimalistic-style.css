@@ -41,7 +41,7 @@
 
 @font-face {
     font-family: 'ShareTechMono';
-    src: url('fonts/ShareTechMono/ShareTechMono-Regular.ttf');
+    src: url('../fonts/ShareTechMono/ShareTechMono-Regular.ttf');
     font-display: swap;
 }
 

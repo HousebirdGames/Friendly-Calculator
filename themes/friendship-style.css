@@ -41,13 +41,13 @@
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('fonts/Quicksand/quicksand-v30-latin-ext_latin-regular.ttf');
+    src: url('../fonts/Quicksand/quicksand-v30-latin-ext_latin-regular.ttf');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('fonts/Quicksand/quicksand-v30-latin-ext_latin-700.ttf');
+    src: url('../fonts/Quicksand/quicksand-v30-latin-ext_latin-700.ttf');
     font-weight: 700;
     font-display: swap;
 }
