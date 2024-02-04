@@ -6,13 +6,14 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=1, interactive-widget=overlays-content">
 	<meta name="description"
-		content="Try this simple calculator. It's free, has no ads, and focuses on a great user experience. You can add it to the Start Screen of your smartphone. Created and published by Felix T. Vogel in 2023.">
+		content="Try this simple calculator. It's free, has no ads, and focuses on a great user experience. You can add it to the start screen of your smartphone. Created and published by Felix T. Vogel in 2023.">
 	<title class="title">Friendly Calculator</title>
 	<meta name="theme-color" content="#212736">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="icon" type="image/x-icon" href="img/CalculatorLogo.png">
 	<link rel="manifest" href="manifest.json">
-	<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="preload" href="fonts/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" id="baseStyle" href="style.css" as="style">
 	<noscript>
 		<link rel="stylesheet" href="style.css">
 
@@ -107,7 +108,7 @@
 		<i class="material-icons">download</i>
 	</a>
 	<p id="versionText">Version 1.8.0.0</p>
-	<div id="infoBox" style="transform: translateY(100%);">
+	<div id="infoBox">
 		<p>This is a calculator created by
 			<a href="https://stubenvogel.com">Felix T. Vogel</a>
 		</p>

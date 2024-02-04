@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var link = document.getElementById('baseStyle');
+    link.rel = 'stylesheet';
+});
+
 let deferredPrompt;
 
 const installButton = document.getElementById('installButton');
